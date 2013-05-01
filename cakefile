@@ -6,6 +6,16 @@ watch = (paths, callback) ->
 
 task 'build', ->
 	console.log 'Building'
+	invoke 'build:index'
+	invoke 'build:code'
+	console.log 'Building done'
+
+task 'build:index'
+	fs = require 'fs'
+	jade = require 'jade'
+	fs.writeFileSync('public/index.html', jade.compile(fs.readFileSync('index.jade'))())
+
+task 'build:code'
 	fs = require 'fs'
 	browserify = require 'browserify'
 	jadeify2 = require 'jadeify2'
@@ -17,7 +27,6 @@ task 'build', ->
 	b.transform(jadeify2)
 	b.transform(coffeeify)
 	b.bundle().pipe output
-	console.log 'Building done'
 
 task 'minify', ->
 	uglifyjs = require 'uglify-js'
@@ -27,4 +36,4 @@ task 'minify', ->
 
 task 'watch', ->
 	console.log 'Watching for changes'
-	watch ['models/', 'templates/', 'views/', 'app.coffee'], (event, filename) -> invoke 'build'
+	watch ['models/', 'templates/', 'views/', 'app.coffee', 'index.jade'], (event, filename) -> invoke 'build'
