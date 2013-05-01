@@ -1,0 +1,15 @@
+{
+	"name": "app",
+	"version": "0.0.0",
+	"description": "",
+	"main": "app.coffee",
+	"devDependencies": {
+		"flour": "",
+		"jade": "",
+		"uglify-js": "",
+		"coffee-script": "",
+		"browserify": "",
+		"jadeify2": "",
+		"coffeeify": ""
+	}
+}
