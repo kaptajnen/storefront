@@ -4,7 +4,6 @@
 	"description": "",
 	"main": "app.coffee",
 	"devDependencies": {
-		"flour": "",
 		"jade": "",
 		"uglify-js": "",
 		"coffee-script": "",
