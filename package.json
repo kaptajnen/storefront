@@ -9,6 +9,7 @@
 		"coffee-script": "",
 		"browserify": "",
 		"jadeify2": "",
-		"coffeeify": ""
+		"coffeeify": "",
+		"debowerify": ""
 	}
 }

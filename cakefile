@@ -20,12 +20,14 @@ task 'build:code', ->
 	browserify = require 'browserify'
 	jadeify2 = require 'jadeify2'
 	coffeeify = require 'coffeeify'
+	debowerify = require 'debowerify'
 
 	output = fs.createWriteStream 'public/app.js'
 
 	b = browserify('./app.coffee')
 	b.transform(jadeify2)
 	b.transform(coffeeify)
+	b.transform(debowerify)
 	b.bundle().pipe output
 
 task 'minify', ->
