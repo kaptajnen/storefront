@@ -1,15 +1,19 @@
 {
 	"name": "app",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "",
-	"main": "app.coffee",
+	"main": "src/app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"watch": "watchify src/app.js -o public/app.js -p [parcelify -wo public/style.css] -v"
+	},
+	"author": "Jonas Laursen",
+	"license": "ISC",
 	"devDependencies": {
-		"jade": "",
-		"uglify-js": "",
-		"coffee-script": "",
-		"browserify": "",
-		"jadeify2": "",
-		"coffeeify": "",
-		"debowerify": ""
-	}
+		"superagent": "^1.4.0",
+		"vue": "^1.0.10",
+		"watchify": "^3.6.1",
+		"parcelify": "^2.1.0"
+	},
+	"style": "src/theme.css"
 }

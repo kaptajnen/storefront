@@ -1,9 +1,0 @@
-{
-	"name": "app",
-	"dependencies": {
-		"backbone": "",
-		"bootstrap": "",
-		"jquery": "",
-		"underscore": ""
-	}
-}
