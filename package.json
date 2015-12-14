@@ -5,8 +5,8 @@
 	"main": "src/app.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"watch": "watchify src/app.js -o public/app.js -p [parcelify -wo public/style.css] -v -d",
-		"build": "browserify src/app.js -o public/app.js -p [parcelify -o public/style.css] -g uglifyify"
+		"watch": "watchify src/app.js -o public/app.js -p [parcelify -wo public/style.css] -t [envify --NODE_ENV development] -v -d",
+		"build": "browserify src/app.js -o public/app.js -p [parcelify -o public/style.css] -t [envify --NODE_ENV production] -g uglifyify"
 	},
 	"author": "Jonas Laursen",
 	"license": "ISC",
