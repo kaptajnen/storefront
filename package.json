@@ -5,12 +5,16 @@
 	"main": "src/app.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"watch": "watchify src/app.js -o public/app.js -p [parcelify -wo public/style.css] -v"
+		"watch": "watchify src/app.js -o public/app.js -p [parcelify -wo public/style.css] -v -d",
+		"build": "browserify src/app.js -o public/app.js -p [parcelify -o public/style.css] -g uglifyify"
 	},
 	"author": "Jonas Laursen",
 	"license": "ISC",
 	"devDependencies": {
+		"browserify": "^12.0.1",
+		"envify": "^3.4.0",
 		"superagent": "^1.4.0",
+		"uglifyify": "^3.0.1",
 		"vue": "^1.0.10",
 		"watchify": "^3.6.1",
 		"parcelify": "^2.1.0"
