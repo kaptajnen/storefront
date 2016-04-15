@@ -1,23 +1,27 @@
 {
-	"name": "app",
-	"version": "0.0.1",
-	"description": "",
-	"main": "src/app.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"watch": "watchify src/app.js -o public/app.js -p [parcelify -wo public/style.css] -t [envify --NODE_ENV development] -v -d",
-		"build": "browserify src/app.js -o public/app.js -p [parcelify -o public/style.css] -t [envify --NODE_ENV production] -g uglifyify"
-	},
-	"author": "Jonas Laursen",
-	"license": "ISC",
-	"devDependencies": {
-		"browserify": "^12.0.1",
-		"envify": "^3.4.0",
-		"superagent": "^1.4.0",
-		"uglifyify": "^3.0.1",
-		"vue": "^1.0.10",
-		"watchify": "^3.6.1",
-		"parcelify": "^2.1.0"
-	},
-	"style": "src/theme.css"
+  "name": "app",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "watchify src/app.js -o public/app.js -p [parcelify -wo public/style.css] -t [envify --NODE_ENV development] -v -d",
+    "build": "browserify src/app.js -o public/app.js -p [parcelify -o public/style.css] -t [envify --NODE_ENV production] -g uglifyify",
+    "serve": "http-server",
+    "dev": "npm-run-all --parallel watch serve"
+  },
+  "author": "Jonas Laursen",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^12.0.2",
+    "envify": "^3.4.0",
+    "http-server": "^0.9.0",
+    "npm-run-all": "^1.7.0",
+    "parcelify": "^2.1.0",
+    "superagent": "^1.8.3",
+    "uglifyify": "^3.0.1",
+    "vue": "^1.0.21",
+    "watchify": "^3.7.0"
+  },
+  "style": "src/theme.css"
 }
