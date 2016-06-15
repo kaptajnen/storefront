@@ -1,5 +1,10 @@
 var Vue = require('vue');
 
-require('./views/testview');
+var testview = require('./views/testview.vue');
 
-app = new Vue({el: '#app'});
+app = new Vue({
+	el: '#app',
+	components: {
+		'testview': testview
+	}
+});
