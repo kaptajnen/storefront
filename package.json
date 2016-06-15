@@ -5,8 +5,8 @@
   "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "watchify src/app.js -o public/app.js -p [parcelify -wo public/style.css] -t [envify --NODE_ENV development] -v -d",
-    "build": "browserify src/app.js -o public/app.js -p [parcelify -o public/style.css] -t [envify --NODE_ENV production] -g uglifyify",
+    "watch": "watchify src/app.js -o public/app.js -p [parcelify -wo public/style.css] -g [envify --NODE_ENV development] -t vueify -v -d",
+    "build": "browserify src/app.js -o public/app.js -p [parcelify -o public/style.css] -g [envify --NODE_ENV production] -t vueify -g uglifyify && cleancss -o public/style.css public/style.css",
     "serve": "http-server",
     "dev": "npm-run-all --parallel watch serve"
   },
@@ -14,14 +14,17 @@
   "license": "ISC",
   "devDependencies": {
     "browserify": "^12.0.2",
+    "clean-css": "^3.4.18",
     "envify": "^3.4.0",
     "http-server": "^0.9.0",
     "npm-run-all": "^1.7.0",
     "parcelify": "^2.1.0",
+    "sass-css-stream": "^0.1.6",
     "superagent": "^1.8.3",
     "uglifyify": "^3.0.1",
     "vue": "^1.0.21",
+    "vueify": "^8.5.4",
     "watchify": "^3.7.0"
   },
-  "style": "src/theme.css"
+  "style": "src/theme.scss"
 }
