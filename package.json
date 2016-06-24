@@ -29,5 +29,6 @@
     "vueify": "^8.5.4",
     "watchify": "^3.7.0"
   },
-  "style": "src/theme.scss"
+  "style": "src/theme.scss",
+  "transforms": ["sass-css-stream"]
 }
